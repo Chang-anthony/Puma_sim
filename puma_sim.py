@@ -167,6 +167,7 @@ class OpenGL_widget(QThread):
         glLoadIdentity()
         gluPerspective(45,640/360,0.01,500)
 
+        
         glMatrixMode(GL_MODELVIEW)
         glLoadIdentity()
 
@@ -204,6 +205,7 @@ class OpenGL_widget(QThread):
         '''
 
         glPushMatrix()
+        glLineWidth(10.0)
 
         glBegin(GL_LINES)
         glColor3f(1.0,0.0,0.0) #RGB
@@ -349,6 +351,7 @@ class OpenGL_widget(QThread):
     
     def draw_ground(self):
         glColor3f(1.0,1.0,1.0)
+        glLineWidth(1.0)
         glBegin(GL_LINES)
         for i in range(21):
             data = -100 + i * 10
